@@ -8,25 +8,53 @@ body {
 h1 {
     color: #fff;
 }
-input[type="text"] {
-    width: 80%;
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+.chat-input {
+    display: flex;
+    align-items: center;
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background-color: #333; /* Dark background for input */
+    border-top: 1px solid #e0e0e0;
+}
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-right: 10px;
     background-color: #333; /* Dark background for input */
     color: #fff; /* White text for input */
 }
 button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #6a1b9a; /* Purple buttons */
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #45a049;
+    background-color: #4a148c;
 }
 #response {
     margin-top: 20px;
@@ -36,15 +64,34 @@ button:hover {
     border-radius: 4px;
     color: #fff; /* White text for response */
 }
-.back-button {
-    padding: 10px 20px;
+.message-content {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.code-block {
+    background-color: #2d2d2d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+}
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px;
+    padding: 5px 10px;
 }
-.back-button:hover {
+.copy-button:hover {
     background-color: #0056b3;
+}
+.start-button, .stop-button {
+    margin-left: 10px;
 }
