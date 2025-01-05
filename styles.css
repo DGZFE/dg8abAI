@@ -1,79 +1,50 @@
-/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4b6cb7, #182848); /* Blue and purple gradient background */
     margin: 0;
-    padding: 0;
-    background-color: #1a1a1a;
-    color: #f4f4f4;
+    padding: 20px;
+    color: #fff; /* White text for better contrast */
 }
-
-/* Header */
-header {
-    background-color: #ff6600;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-}
-
-nav a {
-    color: #ff6600;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #ff6600;
+h1 {
     color: #fff;
 }
-
-/* Main Content */
-main {
-    padding: 20px;
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333; /* Dark background for input */
+    color: #fff; /* White text for input */
 }
-
-/* Cards */
-.card {
-    background-color: #262626;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-/* Buttons */
 button {
-    background-color: #ff6600;
-    border: none;
-    color: white;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
-
 button:hover {
-    background-color: #cc5200;
+    background-color: #45a049;
+}
+#response {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333; /* Dark background for response */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #fff; /* White text for response */
+}
+.back-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.back-button:hover {
+    background-color: #0056b3;
 }
