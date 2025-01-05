@@ -8,12 +8,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(to right, #4b6cb7, #182848); /* Blue and purple gradient background */
             margin: 0;
             padding: 20px;
+            color: #fff; /* White text for better contrast */
         }
         h1 {
-            color: #333;
+            color: #fff;
         }
         input[type="text"] {
             width: 80%;
@@ -21,6 +22,8 @@
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            background-color: #333; /* Dark background for input */
+            color: #fff; /* White text for input */
         }
         button {
             padding: 10px 20px;
@@ -36,9 +39,22 @@
         #response {
             margin-top: 20px;
             padding: 10px;
-            background-color: #fff;
+            background-color: #333; /* Dark background for response */
             border: 1px solid #ccc;
             border-radius: 4px;
+            color: #fff; /* White text for response */
+        }
+        .back-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -46,6 +62,7 @@
     <h1>Welcome to DG8AB AI Companion</h1>
     <input type="text" id="userMessage" placeholder="Type a message...">
     <button onclick="sendMessage()">Send</button>
+    <button class="back-button" onclick="goBack()">Back</button>
     <div id="response"></div>
 
     <script>
@@ -56,6 +73,10 @@
             }).catch(error => {
                 console.error('Error:', error);
             });
+        }
+
+        function goBack() {
+            window.history.back();
         }
     </script>
 </body>
