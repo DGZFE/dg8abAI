@@ -3,153 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DG8AB - AI Companion</title>
+    <title>AI Companion</title>
+    <script src="https://js.puter.com/v2/"></script>
     <style>
-        /* General Styles */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
             margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: #f4f4f4;
-        }
-
-        /* Header */
-        header {
-            background-color: #ff6600;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Main Content */
-        main {
             padding: 20px;
         }
-
-        /* Cards */
-        .card {
-            background-color: #262626;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
+        h1 {
+            color: #333;
         }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Chatbot */
-        .chat-container {
-            background-color: #333;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-
-        .chat-messages {
-            max-height: 300px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-        }
-
-        .chat-message {
-            background-color: #262626;
-            border-radius: 10px;
+        input[type="text"] {
+            width: 80%;
             padding: 10px;
-            margin-bottom: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-
-        .chat-input {
-            display: flex;
-        }
-
-        .chat-input input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-        }
-
-        .chat-input button {
-            background-color: #ff6600;
-            border: none;
-            color: white;
+        button {
             padding: 10px 20px;
-            border-radius: 0 5px 5px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-
-        .chat-input button:hover {
-            background-color: #cc5200;
+        button:hover {
+            background-color: #45a049;
         }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: #ff6600;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
     </style>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="favicon.ico">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="DG8AB">
-    <meta name="theme-color" content="#ff6600">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="DG8AB">
 </head>
 <body>
-    <header>
-        DG8AB - AI Companion
-    </header>
-    <main>
-        <div class="card">
-            <h2>Welcome to DG8AB</h2>
-            <p>Your AI companion.</p>
-            <button>Learn More</button>
-        </div>
-        <div class="chat-container">
-            <div class="chat-messages" id="chat-messages">
-                <!-- Chat messages will appear here -->
-            </div>
-            <div class="chat-input">
-                <input type="text" id="chat-input" placeholder="Type a message...">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-    </main>
-    <footer>
-        Created and Trained by Dhruv Gowda, Owner of Puter.js
-    </footer>
-    <script src="https://puter.js"></script>
+    <h1>Welcome to DG8AB AI Companion</h1>
+    <input type="text" id="userMessage" placeholder="Type a message...">
+    <button onclick="sendMessage()">Send</button>
+    <div id="response"></div>
+
     <script>
         function sendMessage() {
-            const input = document.getElementById('chat-input');
-            const messages = document.getElementById('chat-messages');
-            const message = document.createElement('div');
-            message.className = 'chat-message';
-            message.textContent = input.value;
-            messages.appendChild(message);
-            input.value = '';
-            messages.scrollTop = messages.scrollHeight;
+            const userMessage = document.getElementById('userMessage').value;
+            puter.ai.chat(userMessage).then(response => {
+                document.getElementById('response').innerText = response;
+            }).catch(error => {
+                console.error('Error:', error);
+            });
         }
     </script>
 </body>
 </html>
-
