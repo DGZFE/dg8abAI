@@ -45,23 +45,52 @@
             transform: translateY(-10px);
         }
 
-        /* Buttons */
-        button {
+        /* Chatbot */
+        .chat-container {
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .chat-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .chat-message {
+            background-color: #262626;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            display: flex;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .chat-input button {
             background-color: #ff6600;
             border: none;
             color: white;
             padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
+            border-radius: 0 5px 5px 0;
             cursor: pointer;
-            border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
-        button:hover {
+        .chat-input button:hover {
             background-color: #cc5200;
         }
 
@@ -93,12 +122,33 @@
         <div class="card">
             <h2>Welcome to DG8AB</h2>
             <p>Your AI companion.</p>
-            <button>Learn More</button>
+            <button onclick="window.location.href='voice-assistant.html'">Voice Assistant</button>
+        </div>
+        <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
         </div>
     </main>
     <footer>
         Created and Trained by Dhruv Gowda, Owner of Puter.js
     </footer>
     <script src="https://puter.js"></script>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const message = document.createElement('div');
+            message.className = 'chat-message';
+            message.textContent = input.value;
+            messages.appendChild(message);
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
 </body>
 </html>
