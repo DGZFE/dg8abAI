@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DG8AB Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a2e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .chat-container {
+            background-color: #16213e;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            max-width: 100%;
+            padding: 20px;
+            border: 1px solid #0f3460;
+        }
+        .chat-header {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #e94560;
+        }
+        .chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #0f3460;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #0f3460;
+            color: #fff;
+        }
+        .chat-input {
+            display: flex;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #0f3460;
+            border-radius: 4px;
+            background-color: #1a1a2e;
+            color: #fff;
+        }
+        .chat-input button {
+            padding: 10px;
+            border: none;
+            background-color: #e94560;
+            color: #fff;
+            border-radius: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .chat-input button:hover {
+            background-color: #d7234a;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">DG8AB Chatbot</div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="https://js.puter.com/v2/"></script>
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const chatMessages = document.getElementById('chat-messages');
+
+            if (userInput.trim() === '') return;
+
+            const userMessage = document.createElement('div');
+            userMessage.textContent = 'You: ' + userInput;
+            chatMessages.appendChild(userMessage);
+
+            puter.ai.chat(userInput).then(response => {
+                const botMessage = document.createElement('div');
+                botMessage.textContent = 'DG8AB: ' + response;
+                chatMessages.appendChild(botMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            });
+
+            document.getElementById('user-input').value = '';
+        }
+    </script>
+</body>
+</html>
