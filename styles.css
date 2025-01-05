@@ -56,3 +56,8 @@ body {
 .chat-input button:hover {
     background-color: #d7234a;
 }
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #e94560;
+}
