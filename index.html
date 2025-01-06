@@ -18,25 +18,20 @@
         <div id="response" class="chat-message"></div>
         <div class="chat-input">
             <input type="text" id="userMessage" placeholder="Type a message...">
-            <button class="start-button" onclick="startAI()">Start</button>
+            <button class="start-button" onclick="sendMessage()">Start</button>
         </div>
     </div>
 
     <script>
         function sendMessage() {
             const userMessage = document.getElementById('userMessage').value;
-            puter.ai.chat(userMessage).then(response => {
+            if (userMessage.trim() !== "") {
                 const responseElement = document.createElement('div');
                 responseElement.className = 'message-content';
-                responseElement.innerText = response;
+                responseElement.innerText = userMessage;
                 document.getElementById('response').appendChild(responseElement);
-            }).catch(error => {
-                console.error('Error:', error);
-            });
-        }
-
-        function goBack() {
-            window.history.back();
+                document.getElementById('userMessage').value = ""; // Reset the text bar
+            }
         }
 
         function startAI() {
