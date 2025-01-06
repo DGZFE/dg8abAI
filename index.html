@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Companion</title>
-    <script src="https://js.puter.com/v2/puter.js"></script>
+    <script src="https://js.puter.com/v2/"></script>
     <link rel="stylesheet" href="styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="AI Companion">
-    <meta name="application-name" content="AI Companion">
-    <meta name="theme-color" content="#4b6cb7">
 </head>
 <body>
     <h1>Welcome to DG8AB AI Companion</h1>
@@ -21,7 +16,6 @@
             <button class="start-button" onclick="sendMessage()">Start</button>
         </div>
     </div>
-
     <script>
         function sendMessage() {
             const userMessage = document.getElementById('userMessage').value;
@@ -33,15 +27,6 @@
                 document.getElementById('userMessage').value = ""; // Reset the text bar
             }
         }
-
-        function startAI() {
-            console.log('AI started');
-        }
-
-        function stopAI() {
-            console.log('AI stopped');
-        }
     </script>
 </body>
 </html>
-
