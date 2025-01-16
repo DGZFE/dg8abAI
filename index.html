@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +12,14 @@
     <meta name="apple-mobile-web-app-title" content="DG8AB">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="https://js.puter.com/v2/"></script>
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-box" id="chat-box">
             <div class="message bot-message">Hello! How can I assist you today?</div>
         </div>
-        <input type="text" id="user-input" class="user-input" placeholder="Type your message here...">
+        <input type="text" id="user-input" class="user-input" placeholder="Type your message here..." onkeydown="if(event.key === 'Enter') sendMessage()">
         <button onclick="sendMessage()" class="send-button">Send</button>
     </div>
     <script src="script.js"></script>
