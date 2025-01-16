@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Companion</title>
-    <script src="https://js.puter.com/v2/"></script>
+    <title>DG8AB</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Apple Meta Tags -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="DG8AB">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
-    <h1>Welcome to DG8AB AI Companion</h1>
     <div class="chat-container">
-        <div id="response" class="chat-message"></div>
-        <div class="chat-input">
-            <input type="text" id="userMessage" placeholder="Type a message...">
-            <button class="start-button" onclick="sendMessage()">Start</button>
+        <div class="chat-box" id="chat-box">
+            <div class="message bot-message">Hello! How can I assist you today?</div>
         </div>
+        <input type="text" id="user-input" class="user-input" placeholder="Type your message here...">
+        <button onclick="sendMessage()" class="send-button">Send</button>
     </div>
-    <script>
-        function sendMessage() {
-            const userMessage = document.getElementById('userMessage').value;
-            if (userMessage.trim() !== "") {
-                const responseElement = document.createElement('div');
-                responseElement.className = 'message-content';
-                responseElement.innerText = userMessage;
-                document.getElementById('response').appendChild(responseElement);
-                document.getElementById('userMessage').value = ""; // Reset the text bar
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
