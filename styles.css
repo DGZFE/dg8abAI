@@ -1,97 +1,58 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #4b6cb7, #182848); /* Blue and purple gradient background */
-    margin: 0;
-    padding: 20px;
-    color: #fff; /* White text for better contrast */
-}
-h1 {
-    color: #fff;
-}
-.chat-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.chat-message {
+    background-color: #121212;
+    color: #ffffff;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 15px;
-    overflow-y: auto;
-    max-height: 400px;
-}
-.chat-input {
-    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.chat-box {
+    background-color: #2a2a2a;
+    border-radius: 10px;
     padding: 10px;
-    background-color: #333; /* Dark background for input */
-    border-top: 1px solid #e0e0e0;
-}
-.chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    margin-right: 10px;
-    background-color: #333; /* Dark background for input */
-    color: #fff; /* White text for input */
-}
-button {
-    padding: 10px 20px;
-    background-color: #6a1b9a; /* Purple buttons */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #4a148c;
-}
-#response {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #333; /* Dark background for response */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #fff; /* White text for response */
-}
-.message-content {
-    background-color: #444;
-    padding: 10px;
-    border-radius: 5px;
+    height: 400px;
+    overflow-y: auto;
     margin-bottom: 10px;
-    color: #fff;
 }
-.code-block {
-    background-color: #2d2d2d;
+
+.message {
+    margin: 10px 0;
     padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    position: relative;
+    border-radius: 10px;
 }
-.copy-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #007bff;
-    color: white;
+
+.bot-message {
+    background-color: #3a3a3a;
+}
+
+.user-input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    border-radius: 10px;
     border: none;
-    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.send-button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3a3a3a;
+    color: #ffffff;
     cursor: pointer;
-    padding: 5px 10px;
 }
-.copy-button:hover {
-    background-color: #0056b3;
-}
-.start-button, .stop-button {
-    margin-left: 10px;
+
+.send-button:hover {
+    background-color: #4a4a4a;
 }
