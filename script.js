@@ -1,19 +1,26 @@
-function sendMessage() {
-    const userInput = document.getElementById('user-input');
-    const chatBox = document.getElementById('chat-box');
+class DGPT {
+    constructor() {
+        this.name = 'DGPT';
+        this.creator = 'DG8AB';
+    }
 
-    if (userInput.value.trim() !== '') {
-        const userMessage = document.createElement('div');
-        userMessage.className = 'message user-message';
-        userMessage.textContent = userInput.value;
-        chatBox.appendChild(userMessage);
-
-        const botMessage = document.createElement('div');
-        botMessage.className = 'message bot-message';
-        botMessage.textContent = 'I am here to help!';
-        chatBox.appendChild(botMessage);
-
-        userInput.value = '';
-        chatBox.scrollTop = chatBox.scrollHeight;
+    respondToMessage(message) {
+        return `Hello! I am ${this.name}, created by ${this.creator}. You said: ${message}`;
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ai = new DGPT();
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('message-input');
+    const output = document.getElementById('chat-output');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const userMessage = input.value;
+        const response = ai.respondToMessage(userMessage);
+        output.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+        output.innerHTML += `<p><strong>DGPT:</strong> ${response}</p>`;
+        input.value = '';
+    });
+});
