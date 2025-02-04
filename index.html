@@ -4,57 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DG8AB AI Chat</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="DG8AB AI Chat">
-    <script src="https://js.puter.com/v2/"></script>
-    <script>
-        class DG8ABAI {
-            constructor() {
-                this.name = 'DG8AB AI';
-                this.creator = 'DG8AB';
-            }
-
-            respondToMessage(message) {
-                return `Hello! I am ${this.name}, created by ${this.creator}. You said: ${message}`;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const ai = new DG8ABAI();
-            const form = document.getElementById('chat-form');
-            const input = document.getElementById('message-input');
-            const output = document.getElementById('chat-output');
-
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const userMessage = input.value;
-                const response = ai.respondToMessage(userMessage);
-                output.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
-                output.innerHTML += `<p><strong>DG8AB AI:</strong> ${response}</p>`;
-                input.value = '';
-            });
-        });
-    </script>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
     <header>
         <h1>DG8AB AI Chat</h1>
     </header>
     <main>
-        <div id="chat-output"></div>
-        <form id="chat-form">
-            <input type="text" id="message-input" placeholder="Type your message here..." required>
-            <button type="submit">Send</button>
-        </form>
+        <p>Hello! I am DG8AB AI, created by DG8AB.</p>
+        <p>© 2025 DG8AB</p>
+        <p>Created By Dhruv Gowda</p>
+        <p><a href="https://youtube.com/@dg8ab" target="_blank">YouTube</a></p>
     </main>
     <footer>
         <p>&copy; 2025 DG8AB</p>
-        <p>Created By Dhruv Gowda</p>
-        <p><a href="https://youtube.com/@dg8ab" target="_blank">YouTube Channel</a></p>
     </footer>
+    <script src="https://js.puter.com/v2/"></script>
+    <script>
+        // Using Puter.js to add some AI magic
+        puter.ai.chat(`Why did the chicken cross the road?`).then(puter.print);
+    </script>
 </body>
 </html>
