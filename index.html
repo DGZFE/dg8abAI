@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat</title>
+    <title>DG8AB AI Chat</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="AI Chat">
-    <script src="https://cdn.jsdelivr.net/npm/puter.js"></script>
+    <meta name="apple-mobile-web-app-title" content="DG8AB AI Chat">
+    <script src="https://js.puter.com/v2/"></script>
     <script>
-        class DGPT {
+        class DG8ABAI {
             constructor() {
-                this.name = 'DGPT';
+                this.name = 'DG8AB AI';
                 this.creator = 'DG8AB';
             }
 
@@ -24,7 +24,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const ai = new DGPT();
+            const ai = new DG8ABAI();
             const form = document.getElementById('chat-form');
             const input = document.getElementById('message-input');
             const output = document.getElementById('chat-output');
@@ -34,7 +34,7 @@
                 const userMessage = input.value;
                 const response = ai.respondToMessage(userMessage);
                 output.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
-                output.innerHTML += `<p><strong>DGPT:</strong> ${response}</p>`;
+                output.innerHTML += `<p><strong>DG8AB AI:</strong> ${response}</p>`;
                 input.value = '';
             });
         });
@@ -42,7 +42,7 @@
 </head>
 <body>
     <header>
-        <h1>AI Chat</h1>
+        <h1>DG8AB AI Chat</h1>
     </header>
     <main>
         <div id="chat-output"></div>
@@ -53,6 +53,8 @@
     </main>
     <footer>
         <p>&copy; 2025 DG8AB</p>
+        <p>Created By Dhruv Gowda</p>
+        <p><a href="https://youtube.com/@dg8ab" target="_blank">YouTube Channel</a></p>
     </footer>
 </body>
 </html>
